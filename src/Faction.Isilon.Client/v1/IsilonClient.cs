@@ -6,7 +6,7 @@ using Server;
 
 namespace Faction.Isilon.Client.v1
 {
-    public class IsilonClient : Client, IIsilonClient
+    public class IsilonClient : BaseGrpcClient, IIsilonClient
     {
         private readonly GrpcHostConfiguration<IIsilonClient> _configuration;
 

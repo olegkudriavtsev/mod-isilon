@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Faction.Isilon.Client.v1
 {
-    public abstract class Client
+    public abstract class BaseGrpcClient
     {
         protected async Task<TResult> ExecuteWithInternalClientAsync<TResult, TClient>(
             Func<TClient, Task<TResult>> method,

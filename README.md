@@ -13,8 +13,7 @@ pip3 install -r requirements.txt
 ```
 
 ## Run application
-For running application can be used 2 approaches: run via IDE, e.g. PyCharm or Docker.
-After running application Swagger URL would be `http://localhost:8080/v2/ui`
+For running application can be used 1 approach for the moment: run via IDE, e.g. PyCharm.
 
 ### Run from IDE
 For running from IDE first you need to install all requirements in root folder.
