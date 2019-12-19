@@ -89,13 +89,6 @@ def _enable_server_reflection(args, server):
             if service_name != reflection.SERVICE_NAME: logging.info(service_name)
 
 
-def _print_help():
-    print('Mod-isilon grpc server that connects to Isilon Instance using specified credentials')
-    print('To use verbose pass -v or --verbose argument')
-    print('To use server reflection use -r or --enable_reflection argument')
-    print('Use -h to see this help text')
-
-
 def _is_port_in_use():
     import socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -105,3 +98,10 @@ def _is_port_in_use():
 def _acknowledge_health(health_service):
     health_service.set('', health_pb2.HealthCheckResponse.SERVING)
     health_service.set(isilon_pb2._ISILON.name, health_pb2.HealthCheckResponse.SERVING)
+
+
+def _print_help():
+    print('Mod-isilon grpc server that connects to Isilon Instance using specified credentials')
+    print('To use verbose pass -v or --verbose argument')
+    print('To use server reflection use -r or --enable_reflection argument')
+    print('Use -h to see this help text')
