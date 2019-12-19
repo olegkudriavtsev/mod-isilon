@@ -27,8 +27,6 @@ namespace Faction.Isilon.EndToEndSpecs.v1
         [OneTimeSetUp]
         public async Task OneTimeSetUp()
         {
-            runGrpcServer();
-            
             var environment = Environment.GetEnvironmentVariable(AspNetCoreEnvVarKey);
             var configuration = new ConfigurationBuilder()
                 .AddEnvironmentVariables(AspNetCorePrefix)
@@ -39,17 +37,6 @@ namespace Faction.Isilon.EndToEndSpecs.v1
             var hostConfiguration = new GrpcHostConfiguration<IIsilonClient>();
             configuration.Bind(hostConfiguration);
             _client = new IsilonClient(hostConfiguration);
-        }
-
-        private static void runGrpcServer()
-        {
-            var directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var directoryInfo = new DirectoryInfo(directoryName);
-            var parent = directoryInfo.Parent.Parent.Parent.Parent.Parent;
-            var directoryInfos = parent.GetDirectories("server");
-            var path = directoryInfos[0];
-            var pathToPy = $"{path.FullName}/main.py";
-            LocalProcessStartHelper.run_cmd_in_shell("/usr/local/bin/python3.7", pathToPy, "-v");
         }
 
         [Test]
