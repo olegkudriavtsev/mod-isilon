@@ -65,14 +65,14 @@ namespace Faction.Isilon.Specs.v1
                     CredentialsId = "TestCredentialsId",
                 });
             }
-            catch (RpcException e)
+            catch (Exception e)
             {
                 checkedException = e;
             }
 
             Assert.That(checkedException, Is.Not.Null);
-            Assert.That(checkedException, IsDeeplyEqual.To(rpcException));
-            Assert.That(checkedException.Message, Is.EqualTo(rpcException.Message));
+            Assert.That(checkedException, Is.TypeOf<IsilonClientException>());
+            Assert.That(checkedException.Message, Is.EqualTo("Exception during accessing isilon grpc server"));
             _internalClientMock.Verify(x => x.InfoAsync(It.IsAny<InfoRequest>(), It.IsAny<CallOptions>()), Times.Once());
         }
 

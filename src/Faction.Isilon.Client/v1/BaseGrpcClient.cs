@@ -9,8 +9,15 @@ namespace Faction.Isilon.Client.v1
             Func<TClient, Task<TResult>> method,
             Func<TClient> getClient)
         {
-            var client = getClient();
-            return await method(client);
+            try
+            {
+                var client = getClient();
+                return await method(client);
+            }
+            catch (Exception e)
+            {
+                throw new IsilonClientException(e);
+            }
         }
     }
 }
