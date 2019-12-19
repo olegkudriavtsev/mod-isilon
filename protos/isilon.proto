@@ -1,0 +1,16 @@
+syntax = "proto3";
+package server;
+
+service Isilon {
+    rpc Info (InfoRequest) returns (InfoResponse) {}
+}
+
+// The request message to get info from isilon by credentials id
+message InfoRequest {
+    string CredentialsId = 1;
+}
+
+// The response message containing isilon information
+message InfoResponse {
+    string message = 1;
+}
