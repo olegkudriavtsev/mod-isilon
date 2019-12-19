@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CompareNETObjects" Version="4.57.0"/>
+    <PackageReference Include="Moq" Version="4.10.1"/>
+    <PackageReference Include="NUnit" Version="3.10.1"/>
+    <PackageReference Include="NUnit.CompareNetObjects" Version="0.1.9"/>
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0"/>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2"/>
+    <PackageReference Include="Faction.StyleCopAnalyzer" Version="1.0.1-alpha.2019-07-23b02"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Faction.Isilon.Grpc\Faction.Isilon.Grpc.csproj"/>
+    <ProjectReference Include="..\Faction.Isilon.Client\Faction.Isilon.Client.csproj"/>
+  </ItemGroup>
+
+</Project>

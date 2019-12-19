@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>Faction.Isilon.Grpc</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Faction.Grpc.Core" Version="1.0.1-alpha.2019-11-20b01"/>
+    <PackageReference Include="Faction.Grpc.Module.Swagger" Version="1.0.1-alpha.2019-11-20b01"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="v1\Services"/>
+  </ItemGroup>
+
+</Project>
